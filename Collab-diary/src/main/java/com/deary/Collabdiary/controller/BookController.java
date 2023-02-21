@@ -1,6 +1,7 @@
 package com.deary.Collabdiary.controller;
 
 import com.deary.Collabdiary.entity.Book;
+import com.deary.Collabdiary.error.BookNotFoundException;
 import com.deary.Collabdiary.service.BookService;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class BookController {
     }
 
     @GetMapping("/books/{id}")
-    public Book getBookById(@PathVariable("id") Long bookId){
+    public Book getBookById(@PathVariable("id") Long bookId) throws BookNotFoundException {
         LOGGER.info("Book id is: " + bookId);
         return  bookService.getBookById(bookId);
     }
