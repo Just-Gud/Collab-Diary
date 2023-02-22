@@ -1,5 +1,6 @@
 server:
   port: 8082
+
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
@@ -11,4 +12,10 @@ spring:
       ddl-auto: update
     show-sql: 'true'
 welcome:
-  message: Welcomeeee to Deary!
+  message: Welcome to Deary!
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
